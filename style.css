@@ -1316,3 +1316,116 @@ header {
         width: 100%; /* تاخد الشاشة كلها في الموبايل عشان تبان أحسن */
     }
 }
+header {
+    position: fixed;
+    top: 10px; /* تقليل المسافة في الموبايل */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-container {
+    width: 95%; /* تكبير العرض شوية في الموبايل عشان ميبقاش فيه فراغ كبير */
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 8px 15px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* تصغير اللوجو والخط في الموبايل عشان المساحة */
+.main-logo {
+    width: 35px; /* تصغير اللوجو */
+    height: auto;
+}
+
+.brand-name {
+    font-size: 0.9rem; /* تصغير اسم المؤسسة */
+    white-space: nowrap; /* يمنع الاسم ينزل سطر جديد */
+}
+/* --- تعديلات الموبايل الاحترافية --- */
+@media (max-width: 768px) {
+    /* منع أي خروج للعناصر عن الشاشة */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* ضبط الهيدر في الموبايل */
+    header {
+        top: 0;
+        padding: 5px 0;
+    }
+
+    .nav-container {
+        width: 98%;
+        padding: 8px 12px;
+        border-radius: 25px; /* شكل أبسط في الموبايل */
+    }
+
+    .brand-name {
+        font-size: 0.85rem;
+    }
+
+    /* ضبط سكشن الرئيسية (الهيرو) عشان الكلام ميتغطاش */
+    .hero-section {
+        padding-top: 100px; /* مسافة عشان الهيدر */
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    /* --- طلبك: كل خدمة في سطر لوحدها --- */
+    .services-grid {
+        grid-template-columns: 1fr !important; /* فرض عمود واحد فقط */
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .service-card {
+        width: 100%;
+        padding: 30px 20px;
+        margin-bottom: 10px;
+    }
+
+    /* ضبط سكشن "من نحن" في الموبايل */
+    .about-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image-side, .about-text-side {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* سكشن "لماذا نحن" */
+    .why-grid-v2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* سكشن "تواصل معنا" */
+    .contact-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .glass-card {
+        width: 100%;
+    }
+}
