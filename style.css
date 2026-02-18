@@ -1,3 +1,8 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* يمنع الشاشة تروح يمين وشمال */
+    position: relative;
+}
 :root {
     --primary-color: #0056b3;
     --secondary-color: #ff8c00;
@@ -16,7 +21,6 @@
 
 body {
     background-color: #fff;
-    overflow-x: hidden;
 }
 
 /* الهيدر والناف بار العائم */
@@ -1274,4 +1278,41 @@ header {
     font-weight: 900;
     padding-right: 10px;
     border-right: 3px solid var(--accent-gold);
+}
+@media (max-width: 768px) {
+    header {
+        top: 0;
+        padding: 5px;
+    }
+    
+    .nav-container {
+        width: 100%;
+        border-radius: 0; /* نخلي الهيدر مالي الشاشة فوق في الموبايل أحسن للاستخدام */
+        top: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* تصغير العنوان الكبير عشان مياخدش مساحة */
+        margin-top: 50px; /* نزلنا العنوان شوية عشان الهيدر ميبقاش مغطي عليه */
+    }
+
+    .hero-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .hero-btns {
+        flex-direction: column; /* الأزرار تحت بعض في الموبايل */
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: 100%; /* الزرار ياخد عرض الشاشة */
+        padding: 12px;
+    }
+
+    /* إصلاح المنيو الجانبية */
+    .side-menu {
+        width: 100%; /* تاخد الشاشة كلها في الموبايل عشان تبان أحسن */
+    }
 }
